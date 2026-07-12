@@ -111,7 +111,7 @@ export const siteConfig = {
 
   team: {
     title: "Founding Team",
-    subtitle: "Operators with a decade in Houston's creative and entertainment industry.",
+    subtitle: "Operators with decades of experience across technology, the creator economy, and multi-million-dollar business growth.",
     founders: [
       {
         name: "Jamie Allen",
