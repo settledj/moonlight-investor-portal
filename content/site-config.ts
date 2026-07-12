@@ -198,7 +198,7 @@ export const siteConfig = {
     email: "info@findmoonlight.com",
     secondaryEmail: "david@findmoonlight.com",
     calendarUrl: "https://cal.com/moonlight/investor-intro",
-    linkedinUrl: "https://www.linkedin.com/company/moonlight",
+    linkedinUrl: "https://www.linkedin.com/company/131144059",
   },
 
   footer: {
