@@ -40,6 +40,10 @@ export const siteConfig = {
     secondaryCta: { label: "View Pitch Deck", href: "#deck" },
   },
 
+  appStore: {
+    url: "https://apps.apple.com/us/app/moonlight-find-moonlight/id6742334587",
+  },
+
   video: {
     title: "The Pitch",
     subtitle: "A five-minute walkthrough of what we're building and why now.",

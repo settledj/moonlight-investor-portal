@@ -17,7 +17,7 @@ const fadeUp = {
 };
 
 export function Hero() {
-  const { hero } = siteConfig;
+  const { hero, appStore } = siteConfig;
 
   return (
     <section
@@ -83,6 +83,13 @@ export function Hero() {
             >
               {hero.secondaryCta.label}
             </Button>
+            <a href={appStore.url} target="_blank" rel="noreferrer" aria-label="Download on the App Store">
+              <img
+                src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
+                alt="Download on the App Store"
+                className="h-11 w-auto"
+              />
+            </a>
           </motion.div>
         </div>
 
