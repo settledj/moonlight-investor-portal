@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { motion } from "framer-motion";
-import { Download, Maximize2, FileText } from "lucide-react";
+import { Download, Maximize2, FileText, ExternalLink } from "lucide-react";
 import { siteConfig } from "@/content/site-config";
 import { Button } from "@/components/ui/button";
 
@@ -32,7 +32,7 @@ export function PitchDeck() {
             <p className="mt-3 text-midnight-400">{deck.subtitle}</p>
           </div>
           {hasDeck && (
-            <div className="flex gap-3">
+            <div className="hidden gap-3 sm:flex">
               <Button variant="secondary" size="sm" onClick={handleFullscreen}>
                 <Maximize2 className="h-3.5 w-3.5" /> Fullscreen
               </Button>
@@ -53,12 +53,37 @@ export function PitchDeck() {
           className="overflow-hidden rounded-3xl border border-midnight-100 bg-white shadow-xl shadow-midnight-900/5"
         >
           {hasDeck ? (
-            <iframe
-              ref={frameRef}
-              src={`${deck.pdfUrl}#view=FitH`}
-              title={deck.title}
-              className="h-[75vh] w-full"
-            />
+            <>
+              <iframe
+                ref={frameRef}
+                src={`${deck.pdfUrl}#view=FitH`}
+                title={deck.title}
+                className="hidden h-[75vh] w-full sm:block"
+              />
+              <div className="flex h-[50vh] flex-col items-center justify-center gap-5 px-6 text-center sm:hidden">
+                <FileText className="h-10 w-10 text-midnight-300" />
+                <p className="max-w-xs text-sm text-midnight-400">
+                  For the best experience on mobile, open the deck in your
+                  browser's PDF viewer or download it.
+                </p>
+                <div className="flex flex-wrap items-center justify-center gap-3">
+                  <a href={deck.pdfUrl} target="_blank" rel="noreferrer">
+                    <Button variant="secondary" size="sm">
+                      <ExternalLink className="h-3.5 w-3.5" /> Open Deck
+                    </Button>
+                  </a>
+                  <a href={deck.pdfUrl} download={deck.fileName}>
+                    <Button
+                      variant="primary"
+                      size="sm"
+                      className="bg-midnight-900 text-white hover:bg-midnight-700"
+                    >
+                      <Download className="h-3.5 w-3.5" /> Download
+                    </Button>
+                  </a>
+                </div>
+              </div>
+            </>
           ) : (
             <div className="flex h-[50vh] flex-col items-center justify-center gap-4 text-midnight-300">
               <FileText className="h-10 w-10" />
