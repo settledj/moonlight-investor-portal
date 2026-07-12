@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { siteConfig } from "@/content/site-config";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { MoonMark } from "@/components/hero/MoonMark";
 import { ChevronDown } from "lucide-react";
 
 const fadeUp = {
@@ -28,8 +27,8 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-0 bg-radial-fade" />
       <div className="pointer-events-none absolute inset-0 bg-grain-glow" />
 
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-16 px-6 pb-24 lg:grid-cols-2 lg:gap-8 lg:px-8">
-        <div className="max-w-xl">
+      <div className="relative z-10 mx-auto w-full max-w-3xl px-6 pb-24 lg:px-8">
+        <div>
           <motion.div variants={fadeUp} initial="hidden" animate="show" custom={0}>
             <Badge className="border-white/25 bg-white/10 text-white">
               {hero.eyebrow}
@@ -92,15 +91,6 @@ export function Hero() {
             </a>
           </motion.div>
         </div>
-
-        <motion.div
-          className="relative mx-auto flex items-center justify-center"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-        >
-          <MoonMark size={380} className="max-w-full" />
-        </motion.div>
       </div>
 
       <motion.button
