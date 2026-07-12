@@ -1,4 +1,5 @@
 import { siteConfig } from "@/content/site-config";
+import { MoonIcon } from "@/components/brand/MoonIcon";
 
 export function Footer() {
   const { footer, brand } = siteConfig;
@@ -8,7 +9,7 @@ export function Footer() {
     <footer className="bg-midnight-900 py-10">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-3 px-6 text-center lg:px-8">
         <div className="flex items-center gap-2">
-          <span className="inline-block h-2 w-2 rounded-full bg-moon" />
+          <MoonIcon size={20} className="text-white" />
           <span className="font-display text-sm font-bold lowercase tracking-wide text-white">
             {brand.wordmark}
           </span>

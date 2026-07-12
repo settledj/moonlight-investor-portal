@@ -4,6 +4,7 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { siteConfig } from "@/content/site-config";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
+import { MoonIcon } from "@/components/brand/MoonIcon";
 import { cn } from "@/lib/utils";
 
 export function FloatingNav() {
@@ -53,7 +54,7 @@ export function FloatingNav() {
           href="#overview"
           className="mr-1 flex items-center gap-1.5 px-3 font-display text-sm font-bold lowercase tracking-wide text-white"
         >
-          <span className="inline-block h-2 w-2 rounded-full bg-moon" />
+          <MoonIcon size={20} className="text-white" />
           {siteConfig.brand.wordmark}
         </a>
         <div className="hidden items-center gap-0.5 sm:flex">
